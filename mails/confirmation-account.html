@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmation de votre compte - Encore Pilates</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PermitPNG />
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      /* Reset styles for email clients */
+      body,
+      table,
+      td,
+      p,
+      a,
+      li,
+      blockquote {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        border-collapse: collapse;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Custom styles using colors from global.css */
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fbfaf7 !important;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif !important;
+        line-height: 1.6 !important;
+        color: #594b43 !important;
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      .email-wrapper {
+        width: 100% !important;
+        background: #fbfaf7;
+        padding: 40px 20px;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+
+      .email-container {
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        background: #fbfaf7 !important;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100%;
+      }
+
+      .header {
+        background: #fbfaf7 !important;
+        padding: 40px 50px 20px 50px !important;
+        text-align: center !important;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(98, 157, 125, 0.03) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo-container {
+        margin-bottom: 20px;
+      }
+
+      .logo-img {
+        max-width: 140px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 16px auto;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+      }
+
+      .logo-text {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #629d7d;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+
+      .logo-accent {
+        display: none;
+      }
+
+      .tagline {
+        display: none;
+      }
+
+      .content {
+        padding: 20px 50px 40px 50px !important;
+        box-sizing: border-box;
+      }
+
+      .greeting {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 20px;
+        color: #594b43;
+        margin-bottom: 24px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+
+      .message {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 12px;
+        color: #594b43;
+        line-height: 1.7;
+        margin-bottom: 32px;
+      }
+
+      .message.large {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 16px;
+        color: #594b43;
+        font-weight: 500;
+      }
+
+      .cta-container {
+        text-align: center;
+        margin: 48px 0;
+        width: 100%;
+      }
+
+      .cta-button {
+        display: inline-block !important;
+        background: #f3efe8 !important;
+        color: #594b43 !important;
+        text-decoration: none !important;
+        padding: 18px 80px !important;
+        border-radius: 12px !important;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 300 !important;
+        text-align: center !important;
+        border: none !important;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        letter-spacing: 0.01em;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-button:hover {
+        background: #f3efe8 !important;
+        transform: translateY(-2px);
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+
+      .benefits-section {
+        padding: 32px;
+        margin: 40px 0;
+        box-sizing: border-box;
+      }
+
+      .benefits-title {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: #594b43;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+        width: 100%;
+      }
+
+      .benefit-item {
+        background: #f3efe8;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e3ded6;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        box-sizing: border-box;
+      }
+
+      .benefit-title {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: #629d7d;
+        margin-bottom: 4px;
+      }
+
+      .benefit-desc {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        color: #594b43;
+        line-height: 1.4;
+      }
+
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(98, 157, 125, 0.2) 20%,
+          rgba(98, 157, 125, 0.4) 50%,
+          rgba(98, 157, 125, 0.2) 80%,
+          transparent 100%
+        );
+        margin: 48px 0;
+      }
+
+      .warning-note {
+        background: #e8f5e8;
+        border: 1px solid #629d7d;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 32px 0;
+        box-sizing: border-box;
+      }
+
+      .warning-note p {
+        margin: 0;
+        font-size: 15px;
+        color: #594b43;
+        font-weight: 500;
+      }
+
+      .signature {
+        font-style: italic;
+        color: #629d7d;
+        font-weight: 500;
+        margin-top: 12px;
+      }
+
+      .footer {
+        background: #2a2a2a !important;
+        padding: 48px 50px !important;
+        text-align: center !important;
+        border-top: 1px solid #e3ded6 !important;
+        box-sizing: border-box;
+      }
+
+      .footer-text {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        font-weight: 200;
+        color: #fbfaf7;
+        margin-bottom: 20px;
+      }
+
+      .contact-info {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        color: #fbfaf7;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      .contact-info a {
+        color: #e5c094;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        color: #cdab83;
+      }
+
+      .highlight {
+        color: #629d7d !important;
+        font-weight: 400 !important;
+      }
+
+      .footer-divider {
+        height: 1px;
+        background: #fbfaf7;
+        margin: 20px 0;
+      }
+
+      /* Preheader hidden text */
+      .preheader {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        color: transparent !important;
+        height: 0 !important;
+        width: 0 !important;
+        line-height: 0 !important;
+        font-size: 0 !important;
+        max-height: 0 !important;
+        max-width: 0 !important;
+        overflow: hidden !important;
+      }
+
+      /* Responsive design - Mobile First Approach */
+      @media only screen and (max-width: 768px) {
+        .email-wrapper {
+          padding: 15px 10px !important;
+        }
+
+        .email-container {
+          border-radius: 0 !important;
+          margin: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .header {
+          padding: 25px 20px 15px 20px !important;
+        }
+
+        .content {
+          padding: 15px 20px 25px 20px !important;
+        }
+
+        .footer {
+          padding: 25px 20px !important;
+        }
+
+        .logo-img {
+          max-width: 110px !important;
+        }
+
+        .logo-text {
+          font-size: 26px !important;
+        }
+
+        .greeting {
+          font-size: 18px !important;
+          margin-bottom: 20px !important;
+        }
+
+        .message {
+          font-size: 14px !important;
+          margin-bottom: 24px !important;
+        }
+
+        .message.large {
+          font-size: 15px !important;
+        }
+
+        .cta-button {
+          padding: 14px 24px !important;
+          font-size: 15px !important;
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 24px 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        .benefits-section {
+          padding: 20px 0 !important;
+          margin: 25px 0 !important;
+        }
+
+        .benefits-title {
+          font-size: 18px !important;
+          margin-bottom: 16px !important;
+        }
+
+        .benefits-grid {
+          grid-template-columns: 1fr !important;
+          gap: 12px !important;
+          margin-top: 16px !important;
+        }
+
+        .benefit-item {
+          padding: 16px !important;
+        }
+
+        .benefit-title {
+          font-size: 14px !important;
+          margin-bottom: 6px !important;
+        }
+
+        .benefit-desc {
+          font-size: 11px !important;
+          line-height: 1.5 !important;
+        }
+
+        .warning-note {
+          padding: 16px !important;
+          margin: 24px 0 !important;
+        }
+
+        .warning-note p {
+          font-size: 13px !important;
+        }
+
+        .divider {
+          margin: 32px 0 !important;
+        }
+
+        .footer-text {
+          font-size: 12px !important;
+          line-height: 1.5 !important;
+        }
+      }
+
+      /* Extra small devices */
+      @media only screen and (max-width: 480px) {
+        .email-wrapper {
+          padding: 10px 5px !important;
+        }
+
+        .header {
+          padding: 20px 15px 10px 15px !important;
+        }
+
+        .content {
+          padding: 10px 15px 20px 15px !important;
+        }
+
+        .footer {
+          padding: 20px 15px !important;
+        }
+
+        .logo-img {
+          max-width: 100px !important;
+        }
+
+        .greeting {
+          font-size: 16px !important;
+        }
+
+        .message {
+          font-size: 13px !important;
+        }
+
+        .message.large {
+          font-size: 14px !important;
+        }
+
+        .benefits-title {
+          font-size: 16px !important;
+        }
+
+        .cta-button {
+          padding: 12px 20px !important;
+          font-size: 14px !important;
+        }
+      }
+
+      /* Large screens optimization */
+      @media only screen and (min-width: 1200px) {
+        .email-wrapper {
+          padding: 60px 20px;
+        }
+
+        .email-container {
+          max-width: 720px !important;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .email-container {
+          background-color: #fbfaf7 !important;
+        }
+      }
+
+      /* Print styles */
+      @media print {
+        .email-wrapper {
+          padding: 0 !important;
+        }
+
+        .cta-button {
+          background: #f3efe8 !important;
+          color: #594b43 !important;
+          border: 2px solid #594b43 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preheader text for better spam score -->
+    <div class="preheader">
+      Confirmez votre compte Encore Pilates pour commencer votre parcours
+      bien-être - Quartier de l'Aviation, Casablanca
+    </div>
+
+    <div class="email-wrapper">
+      <table
+        role="presentation"
+        cellspacing="0"
+        cellpadding="0"
+        border="0"
+        width="100%"
+      >
+        <tr>
+          <td align="center" style="padding: 0">
+            <div class="email-container">
+              <!-- Header -->
+              <div class="header">
+                <div class="header-content">
+                  <div class="logo-container">
+                    <img
+                      src="https://nvd02ath3xbdcmxu.public.blob.vercel-storage.com/prod/encore-nav.png"
+                      alt="Encore Pilates Logo"
+                      class="logo-img"
+                      width="140"
+                      height="auto"
+                    />
+                  </div>
+                  <div class="divider"></div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="content">
+                <div class="greeting">Bonjour !</div>
+
+                <div class="message large">
+                  Nous sommes ravis de vous accueillir dans la famille
+                  <span class="highlight">Encore Pilates</span>. Votre compte a
+                  été créé avec succès pour l'adresse
+                  <strong>{{ .Email }}</strong>.
+                </div>
+
+                <div class="message">
+                  Pour finaliser votre inscription et accéder à votre espace
+                  personnel, veuillez confirmer votre adresse email en cliquant
+                  sur le bouton ci-dessous.
+                </div>
+                <div class="divider"></div>
+
+                <div class="cta-container">
+                  <table
+                    role="presentation"
+                    cellspacing="0"
+                    cellpadding="0"
+                    border="0"
+                    align="center"
+                    width="100%"
+                  >
+                    <tr>
+                      <td align="center">
+                        <a href="{{ .ConfirmationURL }}" class="cta-button">
+                          Confirmer mes Identifiants
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="benefits-section">
+                  <div class="benefits-title">
+                    Votre Espace Membre vous Permettra de :
+                  </div>
+                  <div class="benefits-grid">
+                    <div class="benefit-item">
+                      <div class="benefit-title">Réservation en Ligne</div>
+                      <div class="benefit-desc">
+                        Réservez vos cours 24h/24 en quelques clics
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-title">Planning Personnel</div>
+                      <div class="benefit-desc">
+                        Consultez vos cours à venir et votre historique
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-title">Suivi des Progrès</div>
+                      <div class="benefit-desc">
+                        Suivez votre évolution et vos objectifs
+                      </div>
+                    </div>
+                    <div class="benefit-item">
+                      <div class="benefit-title">Gestion du Profil</div>
+                      <div class="benefit-desc">
+                        Modifiez vos informations à tout moment
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="message">
+                  Si vous n'êtes pas à l'origine de cette inscription, vous
+                  pouvez ignorer cet email en toute sécurité. Aucun compte ne
+                  sera activé sans confirmation.
+                </div>
+
+                <div class="warning-note">
+                  <p>
+                    <strong>Important :</strong> Ce lien de confirmation est
+                    valide pendant 1 heure seulement.
+                  </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="message">
+                  <strong
+                    >Nous avons hâte de vous accompagner dans votre parcours
+                    bien-être.</strong
+                  >
+                  <div class="signature">L'équipe Encore Pilates</div>
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="footer">
+                <div class="footer-text">
+                  <strong>Nos horaires</strong><br />
+                  Lundi - Vendredi : 8h - 21h<br />
+                  Samedi - Dimanche : 9h - 12h45<br />
+                  <br />
+                  <strong>Contact</strong><br />
+                  📧 encorepilate@gmail.com<br />
+                  📞 +212 626 279 917<br />
+                  📍 Angle Rue N1 et 3, Quartier de l&apos;Aviation, Residence
+                  magnolia, Bureau B5, RDC, Casablanca, Maroc<br />
+                  <br />
+                  <div class="footer-divider"></div>
+                  <div class="social-icon"></div>
+                  <br />
+                  <span style="font-size: 12px; color: #f3efe8a3">
+                    @2025 Encore Pilate Tout droits réservés<br />
+
+                    <a href="#" style="color: #f3efe8a3; text-decoration: none"
+                      >Unsubscribe</a
+                    ><br />
+                    Made By WeareHune
+                  </span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

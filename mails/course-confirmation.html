@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmation de cours - Encore Pilates</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:PermitPNG />
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      /* Reset styles for email clients */
+      body,
+      table,
+      td,
+      p,
+      a,
+      li,
+      blockquote {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      table,
+      td {
+        border-collapse: collapse;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        max-width: 100%;
+        display: block;
+      }
+
+      /* Custom styles using colors from global.css */
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fbfaf7 !important;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif !important;
+        line-height: 1.6 !important;
+        color: #594b43 !important;
+        width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      .email-wrapper {
+        width: 100% !important;
+        background: #fbfaf7;
+        padding: 40px 20px;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+
+      .email-container {
+        max-width: 680px !important;
+        margin: 0 auto !important;
+        background: #fbfaf7 !important;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+        box-shadow: none !important;
+        border: none !important;
+        width: 100%;
+      }
+
+      .header {
+        background: #fbfaf7 !important;
+        padding: 40px 50px 20px 50px !important;
+        text-align: center !important;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(98, 157, 125, 0.03) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo-container {
+        margin-bottom: 20px;
+      }
+
+      .logo-img {
+        max-width: 140px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 16px auto;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+      }
+
+      .logo-text {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #629d7d;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+
+      .logo-accent {
+        display: none;
+      }
+
+      .tagline {
+        display: none;
+      }
+
+      .content {
+        padding: 20px 50px 40px 50px !important;
+        box-sizing: border-box;
+      }
+
+      .greeting {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 20px;
+        color: #594b43;
+        margin-bottom: 24px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+      }
+
+      .message {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 12px;
+        color: #594b43;
+        line-height: 1.7;
+        margin-bottom: 32px;
+      }
+
+      .message.large {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 16px;
+        color: #594b43;
+        font-weight: 500;
+      }
+
+      .course-details {
+        background: #f3efe8;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 32px 0;
+        border: 1px solid #e3ded6;
+      }
+
+      .course-title {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #629d7d;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      .course-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #e3ded6;
+      }
+
+      .course-item:last-child {
+        border-bottom: none;
+      }
+
+      .item-name {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #594b43;
+      }
+
+      .item-value {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #594b43;
+      }
+
+      .cta-container {
+        text-align: center;
+        margin: 48px 0;
+        width: 100%;
+      }
+
+      .cta-button {
+        display: inline-block !important;
+        background: #629d7d !important;
+        color: #fbfaf7 !important;
+        text-decoration: none !important;
+        padding: 18px 80px !important;
+        border-radius: 12px !important;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+        border: none !important;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+        letter-spacing: 0.01em;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-button:hover {
+        background: #5a8f6f !important;
+        transform: translateY(-2px);
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 100%
+        );
+        pointer-events: none;
+      }
+
+      .info-section {
+        background: #e8f5e8;
+        border: 1px solid #629d7d;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 32px 0;
+        box-sizing: border-box;
+      }
+
+      .info-title {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #629d7d;
+        margin-bottom: 12px;
+      }
+
+      .info-text {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        color: #594b43;
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+
+      .warning-section {
+        background: #fff5e6;
+        border: 1px solid #e5c094;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 32px 0;
+        box-sizing: border-box;
+      }
+
+      .warning-title {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #d97706;
+        margin-bottom: 12px;
+      }
+
+      .warning-text {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        color: #594b43;
+        line-height: 1.6;
+        margin-bottom: 8px;
+      }
+
+      .divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(98, 157, 125, 0.2) 20%,
+          rgba(98, 157, 125, 0.4) 50%,
+          rgba(98, 157, 125, 0.2) 80%,
+          transparent 100%
+        );
+        margin: 48px 0;
+      }
+
+      .signature {
+        font-style: italic;
+        color: #629d7d;
+        font-weight: 500;
+        margin-top: 12px;
+      }
+
+      .footer {
+        background: #2a2a2a !important;
+        padding: 48px 50px !important;
+        text-align: center !important;
+        border-top: 1px solid #e3ded6 !important;
+        box-sizing: border-box;
+      }
+
+      .footer-text {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        font-weight: 200;
+        color: #fbfaf7;
+        margin-bottom: 20px;
+      }
+
+      .contact-info {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 14px;
+        color: #fbfaf7;
+        line-height: 1.6;
+        font-weight: 400;
+      }
+
+      .contact-info a {
+        color: #e5c094;
+        text-decoration: none;
+      }
+
+      .contact-info a:hover {
+        color: #cdab83;
+      }
+
+      .highlight {
+        color: #629d7d !important;
+        font-weight: 400 !important;
+      }
+
+      .footer-divider {
+        height: 1px;
+        background: #fbfaf7;
+        margin: 20px 0;
+      }
+
+      /* Preheader hidden text */
+      .preheader {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        color: transparent !important;
+        height: 0 !important;
+        width: 0 !important;
+        line-height: 0 !important;
+        font-size: 0 !important;
+        max-height: 0 !important;
+        max-width: 0 !important;
+        overflow: hidden !important;
+      }
+
+      /* Responsive design - Mobile First Approach */
+      @media only screen and (max-width: 768px) {
+        .email-wrapper {
+          padding: 15px 10px !important;
+        }
+
+        .email-container {
+          border-radius: 0 !important;
+          margin: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        .header {
+          padding: 25px 20px 15px 20px !important;
+        }
+
+        .content {
+          padding: 15px 20px 25px 20px !important;
+        }
+
+        .footer {
+          padding: 25px 20px !important;
+        }
+
+        .logo-img {
+          max-width: 110px !important;
+        }
+
+        .logo-text {
+          font-size: 26px !important;
+        }
+
+        .greeting {
+          font-size: 18px !important;
+          margin-bottom: 20px !important;
+        }
+
+        .message {
+          font-size: 14px !important;
+          margin-bottom: 24px !important;
+        }
+
+        .message.large {
+          font-size: 15px !important;
+        }
+
+        .course-details {
+          padding: 16px !important;
+          margin: 24px 0 !important;
+        }
+
+        .course-title {
+          font-size: 16px !important;
+          margin-bottom: 12px !important;
+        }
+
+        .course-item {
+          padding: 8px 0 !important;
+        }
+
+        .item-name,
+        .item-value {
+          font-size: 13px !important;
+        }
+
+        .cta-button {
+          padding: 14px 24px !important;
+          font-size: 15px !important;
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 24px 0 !important;
+          box-sizing: border-box !important;
+        }
+
+        .info-section,
+        .warning-section {
+          padding: 16px !important;
+          margin: 24px 0 !important;
+        }
+
+        .info-title,
+        .warning-title {
+          font-size: 15px !important;
+          margin-bottom: 8px !important;
+        }
+
+        .info-text,
+        .warning-text {
+          font-size: 13px !important;
+        }
+
+        .divider {
+          margin: 32px 0 !important;
+        }
+
+        .footer-text {
+          font-size: 12px !important;
+          line-height: 1.5 !important;
+        }
+      }
+
+      /* Extra small devices */
+      @media only screen and (max-width: 480px) {
+        .email-wrapper {
+          padding: 10px 5px !important;
+        }
+
+        .header {
+          padding: 20px 15px 10px 15px !important;
+        }
+
+        .content {
+          padding: 10px 15px 20px 15px !important;
+        }
+
+        .footer {
+          padding: 20px 15px !important;
+        }
+
+        .logo-img {
+          max-width: 100px !important;
+        }
+
+        .greeting {
+          font-size: 16px !important;
+        }
+
+        .message {
+          font-size: 13px !important;
+        }
+
+        .message.large {
+          font-size: 14px !important;
+        }
+
+        .course-title {
+          font-size: 15px !important;
+        }
+
+        .cta-button {
+          padding: 12px 20px !important;
+          font-size: 14px !important;
+        }
+      }
+
+      /* Large screens optimization */
+      @media only screen and (min-width: 1200px) {
+        .email-wrapper {
+          padding: 60px 20px;
+        }
+
+        .email-container {
+          max-width: 720px !important;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .email-container {
+          background-color: #fbfaf7 !important;
+        }
+      }
+
+      /* Print styles */
+      @media print {
+        .email-wrapper {
+          padding: 0 !important;
+        }
+
+        .cta-button {
+          background: #629d7d !important;
+          color: #fbfaf7 !important;
+          border: 2px solid #629d7d !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preheader text for better spam score -->
+    <div class="preheader">
+      Confirmation de votre cours Encore Pilates - Votre réservation a été
+      confirmée
+    </div>
+
+    <div class="email-wrapper">
+      <table
+        role="presentation"
+        cellspacing="0"
+        cellpadding="0"
+        border="0"
+        width="100%"
+      >
+        <tr>
+          <td align="center" style="padding: 0">
+            <div class="email-container">
+              <!-- Header -->
+              <div class="header">
+                <div class="header-content">
+                  <div class="logo-container">
+                    <img
+                      src="https://nvd02ath3xbdcmxu.public.blob.vercel-storage.com/prod/encore-nav.png"
+                      alt="Encore Pilates Logo"
+                      class="logo-img"
+                      width="140"
+                      height="auto"
+                    />
+                  </div>
+                  <div class="divider"></div>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="content">
+                <div class="greeting">Bonjour {{ .CustomerName }} !</div>
+
+                <div class="message large">
+                  Parfait ! Votre réservation pour votre cours
+                  <span class="highlight">Encore Pilates</span> a été confirmée
+                  avec succès.
+                </div>
+
+                <div class="message">
+                  Nous sommes ravis de vous accueillir pour votre séance. Voici
+                  tous les détails de votre cours.
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Course Details -->
+                <div class="course-details">
+                  <div class="course-title">📅 Détails de votre cours</div>
+
+                  <div class="course-item">
+                    <span class="item-name">Type de cours :</span>
+                    <span class="item-value">{{ .CourseType }}</span>
+                  </div>
+
+                  <div class="course-item">
+                    <span class="item-name">Date :</span>
+                    <span class="item-value">{{ .CourseDate }}</span>
+                  </div>
+
+                  <div class="course-item">
+                    <span class="item-name">Heure :</span>
+                    <span class="item-value">{{ .CourseTime }}</span>
+                  </div>
+
+                  <div class="course-item">
+                    <span class="item-name">Durée :</span>
+                    <span class="item-value">{{ .CourseDuration }}</span>
+                  </div>
+
+                  <div class="course-item">
+                    <span class="item-name">Professeur :</span>
+                    <span class="item-value">{{ .InstructorName }}</span>
+                  </div>
+
+                  <div class="course-item">
+                    <span class="item-name">Pack utilisé :</span>
+                    <span class="item-value">{{ .PackName }}</span>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="info-section">
+                  <div class="info-title">📍 Adresse du studio</div>
+                  <div class="info-text">
+                    Angle Rue N1 et 3, Quartier de l'Aviation<br />
+                    Residence magnolia, Bureau B5, RDC<br />
+                    Casablanca, Maroc
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="warning-section">
+                  <div class="warning-title">⚠️ Informations importantes</div>
+                  <div class="warning-text">
+                    • Arrivez 10 minutes avant le début du cours<br />
+                    • Apportez une bouteille d'eau et une serviette<br />
+                    • Portez des vêtements confortables et adaptés au
+                    mouvement<br />
+                    • Annulation possible jusqu'à 24h avant le cours
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="cta-container">
+                  <table
+                    role="presentation"
+                    cellspacing="0"
+                    cellpadding="0"
+                    border="0"
+                    align="center"
+                    width="100%"
+                  >
+                    <tr>
+                      <td align="center">
+                        <a
+                          href="https://encorepilates.ma/account"
+                          class="cta-button"
+                        >
+                          Voir mes réservations
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="message">
+                  <strong>Besoin d'annuler ou modifier ?</strong> Connectez-vous
+                  à votre compte ou contactez-nous directement.
+                  <div class="signature">L'équipe Encore Pilates</div>
+                </div>
+              </div>
+
+              <!-- Footer -->
+              <div class="footer">
+                <div class="footer-text">
+                  <strong>Nos horaires</strong><br />
+                  Lundi - Vendredi : 8h - 21h<br />
+                  Samedi - Dimanche : 9h - 12h45<br />
+                  <br />
+                  <strong>Contact</strong><br />
+                  📧 encorepilate@gmail.com<br />
+                  📞 +212 626 279 917<br />
+                  📍 Angle Rue N1 et 3, Quartier de l&apos;Aviation, Residence
+                  magnolia, Bureau B5, RDC, Casablanca, Maroc<br />
+                  <br />
+                  <div class="footer-divider"></div>
+                  <div class="social-icon"></div>
+                  <br />
+                  <span style="font-size: 12px; color: #f3efe8a3">
+                    @2025 Encore Pilate Tout droits réservés<br />
+
+                    <a href="#" style="color: #f3efe8a3; text-decoration: none"
+                      >Unsubscribe</a
+                    ><br />
+                    Made By WeareHune
+                  </span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

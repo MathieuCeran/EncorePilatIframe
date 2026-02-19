@@ -36,18 +36,14 @@ export const WellPassWidget: React.FC<WellPassWidgetProps> = ({
   return (
     <div className={`w-full ${className}`}>
       <iframe
-        src={`https://pro.wellpass-corp.com/users/api/generateWidget?widgetId=${widgetId}`}
+        src="https://testing-pulse.wellpass-corp.com/users/api/generateWidget?widgetId=11"
         width="100%"
-        height={height}
-        frameBorder="0"
-        style={{
-          border: "none",
-          borderRadius: "12px",
-          boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-        }}
+        height="900"
+        frameborder="0"
+        style="border: none; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
         title="WellPass Calendar Widget"
         allow="payment"
-      />
+      ></iframe>
     </div>
   );
 };

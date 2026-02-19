@@ -1,6 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+
+const WELLPASS_BASE_URL =
+  process.env.NEXT_PUBLIC_WELLPASS_URL ||
+  "https://testing-pulse.wellpass-corp.com";
 
 interface WellPassWidgetProps {
   widgetId?: string;
@@ -13,16 +17,15 @@ export const WellPassWidget: React.FC<WellPassWidgetProps> = ({
   height = 900,
   className = "",
 }) => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
-    // Auto-resize iframe height based on content
     const handleMessage = (e: MessageEvent) => {
-      if (e.data.type === "wellpass-resize") {
-        const iframe = document.querySelector(
-          'iframe[src*="generateWidget"]'
-        ) as HTMLIFrameElement;
-        if (iframe) {
-          iframe.style.height = e.data.height + "px";
-        }
+      if (e.origin !== WELLPASS_BASE_URL) return;
+      if (typeof e.data !== "object" || e.data === null) return;
+
+      if (e.data.type === "wellpass-resize" && iframeRef.current) {
+        iframeRef.current.style.height = e.data.height + "px";
       }
     };
 
@@ -36,14 +39,14 @@ export const WellPassWidget: React.FC<WellPassWidgetProps> = ({
   return (
     <div className={`w-full ${className}`}>
       <iframe
-        src="https://testing-pulse.wellpass-corp.com/users/api/generateWidget?widgetId=11"
+        ref={iframeRef}
+        src={`${WELLPASS_BASE_URL}/users/api/generateWidget?widgetId=${widgetId}`}
         width="100%"
-        height="900"
-        frameborder="0"
-        style="border: none; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+        height={height}
+        style={{ border: "none", borderRadius: "12px", boxShadow: "0 4px 6px rgba(0,0,0,0.1)" }}
         title="WellPass Calendar Widget"
         allow="payment"
-      ></iframe>
+      />
     </div>
   );
 };

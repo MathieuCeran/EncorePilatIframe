@@ -14,7 +14,7 @@ const FormulesPage = () => {
       <BackgroundWrapper>
         <section className="px-4 pb-12">
           <div className="max-w-7xl mx-auto">
-            <WellPassWidget widgetId="20" height={900} />
+            <WellPassWidget widgetId="11" height={900} />
           </div>
         </section>
       </BackgroundWrapper>

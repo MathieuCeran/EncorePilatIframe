@@ -13,7 +13,7 @@ interface WellPassWidgetProps {
 }
 
 export const WellPassWidget: React.FC<WellPassWidgetProps> = ({
-  widgetId = "20",
+  widgetId = "11",
   height = 900,
   className = "",
 }) => {
